@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Container, Row, Col, Form, Button, ListGroup } from "react-bootstrap";
+import "../styles/dynamicform.css";
 
 const DynamicForm = () => {
   const [inputs, setInputs] = useState([{ value: "" }]);
@@ -28,8 +29,8 @@ const DynamicForm = () => {
 
   return (
     <Container className="form-container mt-5">
-      <h2 className="text-center my-4">Dynamic Form</h2>
-      <Form onSubmit={handleSubmit}>
+      <h2 className="form-title">Dynamic Form</h2>
+      <Form onSubmit={handleSubmit} className="form-content">
         {inputs.map((input, index) => (
           <Row key={index} className="mb-3">
             <Col sm={9}>
@@ -48,12 +49,14 @@ const DynamicForm = () => {
             </Col>
           </Row>
         ))}
-        <Button variant="primary" onClick={handleAddInput} className="mr-2">
-          Add Input
-        </Button>
-        <Button type="submit" variant="success" className="ml-2">
-          Submit
-        </Button>
+        <div className="button-group">
+          <Button variant="primary" onClick={handleAddInput}>
+            Add Input
+          </Button>
+          <Button type="submit" variant="success" className="ml-2">
+            Submit
+          </Button>
+        </div>
       </Form>
 
       {submittedValues.length > 0 && (

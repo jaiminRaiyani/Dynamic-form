@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./components/Home";
 import DynamicForm from "./components/DynamicForm";
-import "./App.css";
+import "./styles/App.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 const App = () => {
